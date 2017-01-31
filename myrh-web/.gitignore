@@ -3,6 +3,8 @@
 /.settings/
 .class
 .classpath
+.jar
+.war
 
 .project
 /target
