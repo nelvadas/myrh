@@ -1,0 +1,22 @@
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+   <persistence-unit name="axsPersistenceUnit">
+      <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <class>com.axs.companion.elis.dao.model.AGR_USER</class>
+      <class>com.axs.companion.elis.dao.model.AGR_AGRS</class>
+      <class>com.axs.companion.elis.dao.model.AGR_DEFINE</class>
+      <class>com.axs.companion.elis.dao.model.CDHDR</class>
+      <class>com.axs.companion.elis.dao.model.USORG</class>
+      <class>com.axs.companion.elis.dao.model.USVART</class>
+      <class>com.axs.companion.elis.dao.model.ZEHR_EXTRACT_IDM</class>
+      <class>com.axs.companion.elis.dao.model.Restrictions_ORG</class>
+      <class>com.axs.companion.elis.dao.model.CDPOS</class>
+      <class>com.axs.companion.elis.dao.model.Ecarts</class>
+      <class>com.axs.companion.elis.dao.model.AGR_TCODE</class>
+      <class>com.axs.companion.elis.dao.model.PA0001</class>
+      <class>com.axs.companion.elis.dao.model.PA0105</class>
+      <properties>
+        <property name="hibernate.connection.release_mode" value="after_transaction"/>
+        <property name="connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider" /> 
+      </properties>
+   </persistence-unit>
+</persistence>

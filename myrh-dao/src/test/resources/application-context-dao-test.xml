@@ -1,0 +1,50 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"	
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans	
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+	<context:component-scan base-package="com.axs.companion.elis.dao.impl" />
+ 
+	<!-- ************ JPA configuration *********** -->
+	<tx:annotation-driven transaction-manager="axsTransactionManager" />  
+    <bean id="axsTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="axsEntityManagerFactory" />
+    </bean>
+    
+       
+    <bean id="axsEntityManagerFactory" name="axsEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
+        <property name="persistenceUnitName" value="axsPersistenceUnit" />        
+        <property name="dataSource" ref="axsDataSource" />
+        <property name="packagesToScan" value="com.axs.companion.elis.dao.*" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true" />
+                <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect" />
+            </bean>
+        </property>
+    </bean> 
+ 
+ 	<bean name="axsDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    	<property name="url" value="jdbc:mysql://localhost:3306/axs_companion" />
+    	<property name="username" value="root" />
+    	<property name="password" value="root" />
+	</bean>
+	
+	<bean name="agrUserDAO" class="com.axs.companion.elis.dao.impl.UserDAOImpl" />
+	<bean name="ecartsDAO" class="com.axs.companion.elis.dao.impl.EcartDAOImpl" />
+	<bean name="usorgDAO" class="com.axs.companion.elis.dao.impl.USORG_DAOImpl" />
+	<bean name="usvartDAO" class="com.axs.companion.elis.dao.impl.USVART_DAOImpl" />
+	<bean name="dataorgDAO" class="com.axs.companion.elis.dao.impl.DATAORGDAOImpl" />
+	<bean name="restrictionsorgDAO" class="com.axs.companion.elis.dao.impl.RESTRICTIONSORGDAOImpl" />
+
+	
+</beans>

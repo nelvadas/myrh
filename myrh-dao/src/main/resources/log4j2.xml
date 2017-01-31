@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- doc https://logging.apache.org/log4j/2.x/manual/appenders.html#RollingFileAppender
+	%c	le nom du logger qui a émis le message
+	%C	le nom de la classe qui a émis le message
+	%d	le timestamp de l'émission du message
+	%m	le message
+	%n	un retour chariot
+	%p	la priorité du message
+	%r	le nombre de milliseconde écoulé entre le lancement de l'application et l'émission du message
+	%t	le nom du thread
+	%x	NDC du thread
+	%%	le caractère %
+ -->
+<Configuration status="DEBUG" name="AxS" >
+	<Properties>
+		<Property name="log-path">logs</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile name="RollingFile" fileName="${log-path}/axs.log" filePattern="${log-path}/$${date:yyyy-MM-dd}/axs-%d{yyyy-MM-dd}-%i.log" >
+			<PatternLayout>
+				<pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy /> 
+				<!-- <SizeBasedTriggeringPolicy size="10 KB" />-->
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+			<DefaultRolloverStrategy max="5"/>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="root" level="debug" additivity="false">
+			<AppenderRef ref="RollingFile" level="debug"/>
+		</Logger>
+		<Root level="debug" additivity="false">
+			<AppenderRef ref="RollingFile"/>
+		</Root>
+	</Loggers>
+</Configuration>
