@@ -2,6 +2,7 @@ package fr.imie.tp.myrh.dao.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -57,6 +59,22 @@ public class Employe implements Serializable {
 	@Temporal(TemporalType.DATE)
 	@Column(name="BIRTHDATE")
 	private Date brithdate;
+	
+	
+	//Relations
+	//1 relation Employe et Horaire
+	@OneToMany(mappedBy="travailleur")
+	private List<Horaire>horaires;
+	
+	
+
+	public List<Horaire> getHoraires() {
+		return horaires;
+	}
+
+	public void setHoraires(List<Horaire> horaires) {
+		this.horaires = horaires;
+	}
 
 	public Long getId() {
 		return id;
