@@ -91,4 +91,5 @@
 			<version>${project.version}</version>
 		</dependency>-->
 	</dependencies>
+	<groupId>fr.imie.tp</groupId>
 </project>

@@ -5,8 +5,9 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/x
    
    <persistence-unit name="myRhPersistenceUnit">
       
-      <class>fr.imie.tp.myrh.dao.model.Employe</class>
-     
+       <class>fr.imie.tp.myrh.dao.model.Employe</class>
+      <class>fr.imie.tp.myrh.dao.model.Horaire</class>
+      <class>fr.imie.tp.myrh.dao.model.Projet</class>
       <properties>
         <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/myrhdb" /> 
@@ -16,7 +17,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/x
         <property name="showSql" value="true" />
         <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect" />
        
-        <property name="hibernate.hbm2ddl.auto" value="create" />
+       <property name="hibernate.hbm2ddl.auto" value="create" />
                
     
       </properties>

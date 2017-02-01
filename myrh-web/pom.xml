@@ -30,53 +30,54 @@
     <version>6.0</version>
 </dependency>
   
-  
-  <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
-<dependency>
-    <groupId>com.sun.faces</groupId>
-    <artifactId>jsf-api</artifactId>
-    <version>2.2.13</version>
-</dependency>
+<!-- JSF -->
+                <dependency>
+                        <groupId>com.sun.faces</groupId>
+                        <artifactId>jsf-impl</artifactId>
+                        <version>2.2.4</version>
+                </dependency>
+                <dependency>
+                <groupId>com.sun.faces</groupId>
+                        <artifactId>jsf-api</artifactId>
+                        <version>2.2.4</version>
+                </dependency>
+                <dependency>
+                        <groupId>javax.faces</groupId>
+                        <artifactId>javax.faces-api</artifactId>
+                        <version>2.2</version>
+                </dependency>
+
+                <!-- javax servlet api -->
+                <dependency>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>javax.servlet-api</artifactId>
+                        <version>3.1.0</version>
+                </dependency>
+
+                <dependency>
+                        <groupId>org.glassfish</groupId>
+                        <artifactId>javax.faces</artifactId>
+                        <version>2.2.12</version>
+                </dependency>
+                <dependency>
+                        <groupId>org.glassfish.web</groupId>
+                        <artifactId>el-impl</artifactId>
+                        <version>2.2</version>
+                </dependency>
+                <dependency>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>jstl</artifactId>
+                        <version>1.2</version>
+                </dependency>
 
 
-<dependency>
-			<groupId>com.sun.faces</groupId>
-			<artifactId>jsf-impl</artifactId>
-			<version>2.1.13</version>
-		</dependency>
-
-
-<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
 		
 		
-		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 <dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>3.1.0</version>
+    <groupId>fr.imie.tp</groupId>
+    <artifactId>myrh-dao</artifactId>
+    <version>${project.version}</version>
 </dependency>
-
-
-<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
-<dependency>
-    <groupId>javax.servlet.jsp</groupId>
-    <artifactId>jsp-api</artifactId>
-    <version>2.2</version>
-</dependency>
-
-
-<!-- https://mvnrepository.com/artifact/org.glassfish.web/el-impl -->
-<dependency>
-    <groupId>org.glassfish.web</groupId>
-    <artifactId>el-impl</artifactId>
-    <version>2.2.1-b05</version>
-</dependency>
-
-
 		
 
   

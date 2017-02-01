@@ -10,11 +10,33 @@
 <h:head>
 </h:head>
 <h:body>
+
+<!-- 
 	<h1>Hello World PrimeFaces</h1>
 
 	<h:form>
 	   <p:editor value="#{imieBean.value}" />
 	</h:form>
+ -->
+
+	<!--  Display Employe List -->
+	<p:dataTable var="emp" value="#{employeViewController.employeItems}">
+    	<p:column headerText="Id">
+     	   <h:outputText value="#{emp.id}" />
+    	</p:column>
+ 
+    	<p:column headerText="Prénom">
+     	   <h:outputText value="#{emp.firstName}" />
+    	</p:column>
+ 
+   		 <p:column headerText="Nom">
+       		 <h:outputText value="#{emp.lastname}" />
+    	</p:column>
+ 
+    	<p:column headerText="Birthdate">
+      	  <h:outputFormat  value="#{emp.brithdate}"   />
+   	 </p:column>
+	</p:dataTable>
 
 </h:body>
 </html>
